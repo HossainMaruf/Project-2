@@ -1,26 +1,26 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 
 
 app.get('/', (req, res) => {
-  console.log(req);
-  res.send("<h1>Home Page</h1>");
+  res.sendFile(path.join(__dirname,'views', "Home.html"));
 })
 
 app.get('/about', (req, res) => {
-  res.send("<h1>About Page</h1>")
+  res.sendFile(path.join(__dirname, 'views', "About.html"));
 })
 
 app.get('/contact', (req, res) => {
-  res.send("<h1>Contact Page</h1>")
+  res.sendFile(path.join(__dirname, 'views', "Contact.html"));
 })
 
 app.get('/dashboard', (req, res) => {
-  res.send("<h1>Dashboard Page</h1>")
+  res.sendFile(path.join(__dirname, 'views', "Dashboard.html"));
 })
 
 app.get('*', (req, res) => {
-  res.send("<h1>404 Page</h1>")
+  res.sendFile(path.join(__dirname, 'views', "404.html"));
 })
 
 
