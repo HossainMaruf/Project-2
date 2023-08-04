@@ -1,0 +1,27 @@
+<%-include('../includes/Header')-%>
+<%-include('../includes/Navbar')-%>
+<h1 class="text-center text-muted"><%=heading %></h1> 
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(let i=0; i<users.length; i++) { %>
+    <tr>
+      <th scope="row"><%= i+1 %></th>
+      <td><%= users[i].username %></td>
+      <td><%= users[i].email %></td>
+      <td><%= users[i].password %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+</div>
+
+<%-include('../includes/Footer')-%>
